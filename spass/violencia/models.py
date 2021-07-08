@@ -123,6 +123,7 @@ class FactorDesagregacion(models.Model):
 class ValorFactor(models.Model):
     valor = models.CharField("Valor",max_length=200)
     codigo = models.CharField("Codigo",max_length=4)
+    factor = models.ForeignKey("violencia.FactorDesagregacion", on_delete=models.CASCADE, related_name="factor")
 
     class Meta:
         verbose_name = 'Valor de Factor'
