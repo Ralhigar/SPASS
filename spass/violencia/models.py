@@ -111,7 +111,7 @@ class Reporte(models.Model):
 
 class FactorDesagregacion(models.Model):
     nombre = models.CharField("Nombre",max_length=50)
-    
+    codigo = models.CharField("Codigo",max_length=50)
     class Meta:
         verbose_name = 'FactorDesagregacion'
         verbose_name_plural = 'Factores de Desagregacion'
