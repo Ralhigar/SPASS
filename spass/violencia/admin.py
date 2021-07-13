@@ -16,7 +16,7 @@ class ResultadoAdmin(admin.ModelAdmin):
         "eje")
     search_fields = list_display[0:3] + ("eje__nombre",)
     ordering = ('id',)
-
+    
 
 @admin.register(Indicador)
 class IndicadorAdmin(admin.ModelAdmin):
@@ -35,6 +35,11 @@ class IndicadorAdmin(admin.ModelAdmin):
         "formula",
         "plazo",
         "resultado__resultado",
+    )
+    filter_horizontal = (
+        "instituciones",
+        "variables",
+        "fuentes_informacion",
     )
     ordering = ('id',)
 
@@ -89,6 +94,9 @@ class ReporteAdmin(admin.ModelAdmin):
     "contenido",
     "indicador",
     "municipio",
+    )
+    filter_horizontal = (
+        "factores",
     )
     search_fields = ('id',"codigo","contenido")
     ordering = ('id',)
